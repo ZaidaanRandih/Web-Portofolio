@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portofolio - Software Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav>
+            <ul class="header-list">
+                <li class="logo"><a href="#">< ></a></li>
+                <ul class="header2">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <div class="auth-buttons">
+                        <a href="login.html" class="btn login-btn">Login</a>
+                        <a href="register.html" class="btn register-btn">Register</a>
+                    </div>
+                </ul>
+            </ul>
+            
+        </nav>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="profile.jpeg" alt="Profile Image" class="profile-image">
+            <div class="hero-text">
+                <p>Hello! I am <span class="name">Zaidaan Afif Randih</span></p>
+                <h1>A Designer who Judges a book by its <span class="highlight">cover...</span></h1>
+                <p class="sub-text">Because if the cover does not inspire you what else can?</p>
+                <h2>I'm a Software Engineer.</h2>
+                <p class="current">Currently, I'm a Software Engineer at <span class="company">@ Telkom University</span></p>
+                <p class="description">A self-taught Web Developer, functioning in the industry for 3+ years now. I make meaningful and delightful website that create an equilibrium between user needs and business goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Personal Blog</h3>
+                <p>Making my own personal blog using HTML,CSS only.</p>
+                <button class="btn" onclick="redirectToGitHubPB()">Learn More</button>
+            </div>
+            <div class="project-card">
+                <h3>Automata Theory</h3>
+                <p>My project team from the Automata Theory course in Telkom University.</p>
+                <button class="btn" onclick="redirectToGitHub()">Learn More</button>
+            </div>
+            <div class="project-card">
+                <h3>Algorithm strategy</h3>
+                <p>My project team from the Algorithm strategy course in Telkom University.</p>
+                <button class="btn" onclick="redirectToGitHubSA()">Learn More</button>
+            </div>
+            <div class="project-card">
+                <h3>Yoasobi Web</h3>
+                <p>My web refering to my high school friends.</p>
+                <button class="btn" onclick="redirectToGitHubYoasobi()">Learn More</button>
+            </div>
+        </div>
+    </section>
+    
+    
+    <script>
+        function redirectToGitHub() {
+            window.location.href = "https://github.com/ZaidaanRandih";
+        }
+        function redirectToGitHubYoasobi() {
+            window.location.href = "https://zaidaanrandih.github.io/Yoasobi-Web/";
+        }
+        function redirectToGitHubSA() {
+            window.location.href = "https://zaidaanrandih.github.io/TubesSA/";
+        }
+        function redirectToGitHubPB() {
+            window.location.href = "https://zaidaanrandih.github.io/PersonalBlog/";
+        }
+        // Function to animate project cards when they scroll into view
+        document.addEventListener("DOMContentLoaded", function() {
+        const cards = document.querySelectorAll('.project-card');
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Add visible class when in view
+                    observer.unobserve(entry.target); // Stop observing after animation triggers
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the card is visible
+        
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    });
+    </script>
+    
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <p>I’m currently looking to join a <span class="highlight">cross-functional team</span> that values improving people's lives through accessible design.</p>
+        <div class="icons">
+            <!-- Add relevant icons here -->
+        </div>
+    </section>
+
+    <!-- Featured Project Section -->
+    <section class="featured-project">
+        <h2>Featured Project</h2>
+        <div class="project-details">
+            <div class="project-info">
+                <h3>Example Project</h3>
+                <p>A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.</p>
+            </div>
+            <img src="Project_yoasobi.png" alt="Project Image" class="project-image">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <p>Contact</p>
+        <p>I'm currently looking to join a cross-functional team that values improving people's lives through accessible design. Reach me at <a>zaidanrandih61@gmail.com</a></p>
+        <div class="socials">
+            <a href="https://www.instagram.com/zaidaanrandih/"><i class="icon-instagram"><img src="ig_icon.png" alt="ig_icon"></i></a>
+            <a href="https://www.linkedin.com/in/zaidaanrandih/"><i class="icon-gmail"><img src="gmail_icon.png" alt="gmail_icon"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
